@@ -6,11 +6,6 @@
 
 @layer base {
   :root {
-    --dark-blue: hsl(209, 23%, 22%);
-    --very-dark-blue-light-mode-text: hsl(200, 15%, 8%);
-    --dark-gray-light-mode-input: hsl(0, 0%, 52%);
-    --very-light-gray-light-mode-bg: hsl(0, 0%, 98%);
-
     --white: hsl(0, 0%, 100%);
     --background: hsl(0, 0%, 98%);
     --foreground: 222.2 84% 4.9%;
@@ -18,7 +13,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: hsl(200, 15%, 8%);
+    --primary: 200, 15%, 8%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -40,13 +35,14 @@
   }
 
   .dark {
+    --main-bcg:  hsl(209, 23%, 22%);
     --background: hsl(207, 26%, 17%);
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 'white';
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -67,14 +63,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
 * {
   margin: 0;
@@ -84,4 +72,5 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  background-color: var(--background);
 }
