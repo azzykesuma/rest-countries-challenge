@@ -6,15 +6,15 @@ import { Link } from "lucide-react";
 
 const SingleCountry = ({ countryData }: { countryData: CountryType }) => {
   return (
-    <div className="bg-mainBcg rounded-lg p-2 mb-4">
+    <div className="bg-mainBcg rounded-md mb-4 shadow-lg md:h-[400px]">
       <div className="aspect-video">
         <Image
-            priority
+          priority
           alt={`country flag of ${countryData.name.official}`}
-          src={countryData.flags.svg}
+          src={countryData.flags.png}
           width={300}
-          height={10}
-          className="rounded-lg"
+          height={100}
+          className="rounded-t-lg w-full lg:w-[300px]"
         />
       </div>
       <div className="p-6">

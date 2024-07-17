@@ -44,11 +44,10 @@ const Countries = () => {
     retry: 0
   });
 
-
   if (isLoading || isLoadingFilter || isLoadingText) {
     return (
       <div className='p-4'>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 md:flex-row md:w-full'>
           <Skeleton />
           <Skeleton />
           <Skeleton />
@@ -73,9 +72,9 @@ const Countries = () => {
 
 
   return (
-    <div className='p-4 px-8'>
+    <div className='p-4 px-8 md:grid md:grid-cols-2 md:gap-2 lg:grid-cols-4 lg:gap-4 md:justify-center md:px-24'>
       {result && result.map((country: CountryType) => (
-        <div key={country.cca2}>
+        <div key={country.cca2} className='md:w-fit md:mx-auto lg:w-2/3'>
             <Link href={country.name.common}>
                 <SingleCountry countryData={country}/>
             </Link>

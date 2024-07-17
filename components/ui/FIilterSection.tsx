@@ -54,22 +54,24 @@ const FilterSection = () => {
   }
 
   return (
-    <section className="relative px-4">
-      <input
-        type="text"
-        placeholder="Search for a country..."
-        className="py-4 pl-16 rounded-md w-full my-6 bg-mainBcg"
-        value={textFilter}
-        onChange={(e) => handleChange(e.target.value)}
-      />
-      <div className="absolute top-10 left-10 z-2">
-        <SearchIcon />
+    <section className="px-4 md:px-24 mb-6 md:flex md:justify-between md:items-center">
+      <div className="relative w-full md:w-1/2 lg:w-1/3">
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          className="py-4 pl-20 rounded-md w-full my-6 bg-mainBcg"
+          value={textFilter}
+          onChange={(e) => handleChange(e.target.value)}
+        />
+        <div className="absolute top-10 left-10 z-2">
+          <SearchIcon />
+        </div>
+        {textFilter && (
+          <button onClick={handleClear} className="absolute right-10 top-10">
+            Clear
+          </button>
+        )}
       </div>
-      {textFilter && (
-        <button onClick={handleClear} className="absolute right-10 top-10">
-          Clear
-        </button>
-      )}
       <Select value={filter} onValueChange={handleCountryFilter}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Filter by Region" />
